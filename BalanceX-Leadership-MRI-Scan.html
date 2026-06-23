@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership MRI Scan — BalanceX.ai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1F3A; --purple: #534AB7; --purple-light: #7F77DD; --purple-faint: #EEEDFE;
+    --blue: #185FA5; --blue-light: #378ADD; --blue-faint: #E6F1FB;
+    --gold: #BA7517; --gold-faint: #FAEEDA;
+    --text-primary: #0B1F3A; --text-secondary: #4A5568; --text-muted: #718096;
+    --border: rgba(11,31,58,0.10); --surface: #FAFAF8; --white: #FFFFFF; --divider: rgba(11,31,58,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #E2EAF4; --purple: #AFA9EC; --purple-light: #CECBF6; --purple-faint: #26215C;
+      --blue: #85B7EB; --blue-light: #B5D4F4; --blue-faint: #042C53;
+      --gold: #EF9F27; --gold-faint: #412402;
+      --text-primary: #F0F4F8; --text-secondary: #A0AEC0; --text-muted: #718096;
+      --border: rgba(255,255,255,0.10); --surface: #0D1B2E; --white: #112240; --divider: rgba(255,255,255,0.07);
+    }
+  }
+  body { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: var(--text-primary); background: var(--surface); -webkit-font-smoothing: antialiased; }
+  .page { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 16px; }
+  .hero { padding: 64px 0 48px; border-bottom: 0.5px solid var(--divider); margin-bottom: 56px; }
+  .hero-headline { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 52px); line-height: 1.1; color: var(--text-primary); margin-bottom: 20px; max-width: 620px; }
+  .hero-headline em { font-style: italic; color: var(--blue-light); }
+  .hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 540px; line-height: 1.65; margin-bottom: 32px; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-faint); color: var(--blue); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 100px; }
+  @media (prefers-color-scheme: dark) { .hero-tag { color: var(--blue-light); } }
+  .section { margin-bottom: 56px; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 0.5px solid var(--divider); }
+  .section-heading { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--text-primary); margin-bottom: 14px; line-height: 1.25; }
+  .prose { color: var(--text-secondary); font-size: 15px; line-height: 1.75; max-width: 620px; }
+  .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+  .problem-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+  .card-icon { font-size: 22px; margin-bottom: 10px; display: block; line-height: 1; }
+  .problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .deliverables { margin-top: 24px; display: flex; flex-direction: column; }
+  .deliverable { display: flex; gap: 20px; padding: 22px 0; border-bottom: 0.5px solid var(--divider); }
+  .deliverable:last-child { border-bottom: none; }
+  .deliverable-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--purple-faint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .deliverable-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .deliverable-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+  .process-steps { margin-top: 28px; display: flex; flex-direction: column; }
+  .process-step { display: flex; gap: 20px; padding: 0 0 32px; }
+  .step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .step-num { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #FFFFFF; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  @media (prefers-color-scheme: dark) { .step-num { background: var(--purple); color: #EEEDFE; } }
+  .step-line { width: 1px; flex: 1; background: var(--divider); margin-top: 6px; }
+  .process-step:last-child .step-line { display: none; }
+  .step-content { padding-top: 6px; }
+  .step-title { font-size: 15px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .step-duration { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: var(--purple); background: var(--purple-faint); padding: 2px 10px; border-radius: 100px; margin-bottom: 8px; }
+  @media (prefers-color-scheme: dark) { .step-duration { color: var(--purple-light); } }
+  .step-duration svg { stroke: var(--purple); flex-shrink: 0; }
+  .fit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 24px; }
+  .fit-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; background: var(--white); border: 0.5px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .fit-check { color: var(--blue-light); font-size: 15px; flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+  .credential-block { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-top: 24px; }
+  .credential-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+  .credential-title { font-size: 13px; color: var(--purple); font-weight: 500; margin-bottom: 16px; }
+  @media (prefers-color-scheme: dark) { .credential-title { color: var(--purple-light); } }
+  .credential-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 10px; }
+  .cert-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 0.5px solid var(--divider); }
+  .cert-pill { font-size: 11px; font-weight: 500; color: var(--blue); background: var(--blue-faint); padding: 4px 12px; border-radius: 100px; }
+  @media (prefers-color-scheme: dark) { .cert-pill { color: var(--blue-light); } }
+  .timeline-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-faint); color: var(--blue); font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
+  @media (prefers-color-scheme: dark) { .timeline-badge { color: var(--blue-light); } }
+  .timeline-badge svg { stroke: var(--blue); }
+  .cta-block { background: var(--purple-faint); border: 1px solid rgba(83,74,183,0.18); border-radius: 16px; padding: 44px 40px; margin-top: 56px; text-align: center; }
+  .cta-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 16px; }
+  .cta-heading { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--text-primary); margin-bottom: 14px; line-height: 1.2; }
+  .cta-sub { font-size: 15px; color: var(--text-secondary); max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--purple); color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 13px 30px; border-radius: 100px; text-decoration: none; transition: background 0.15s; }
+  .cta-btn:hover { background: var(--purple-light); }
+  .cta-btn svg { stroke: #FFFFFF; }
+  .footer-note { margin-top: 16px; font-size: 12px; color: var(--text-muted); }
+  @media (max-width: 520px) { .hero { padding: 40px 0 36px; } .cta-block { padding: 32px 24px; } .credential-block { padding: 22px 20px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <p class="eyebrow">BalanceX.ai &nbsp;&middot;&nbsp; Executive Intelligence</p>
+    <h1 class="hero-headline">See the leadership market clearly,<br><em>before</em> you commit to a search.</h1>
+    <p class="hero-sub">Most executive hires go wrong before the first candidate is approached. A misaligned brief, an unrealistic salary band, or an underestimated talent pool turns a 90-day search into a six-month drain. The Leadership MRI Scan fixes that at the front end.</p>
+    <div class="hero-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Same-day intelligence &mdash; delivered within hours, not weeks
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The challenge</p>
+    <h2 class="section-heading">Where most searches go wrong</h2>
+    <p class="prose">Founders and boards rarely lose a search in the final round. They lose it in the first two weeks &mdash; with a brief nobody agrees on, a compensation band that can&rsquo;t attract the right people, and no real view of who&rsquo;s actually available.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="card-icon">&#127919;</span>
+        <p>Vague role definitions that no real-world candidate actually matches &mdash; written to satisfy internal politics, not market reality.</p>
+      </div>
+      <div class="problem-card">
+        <span class="card-icon">&#128101;</span>
+        <p>Misalignment between founder, CEO, board, and HR about what &ldquo;great&rdquo; looks like before the search has started.</p>
+      </div>
+      <div class="problem-card">
+        <span class="card-icon">&#128176;</span>
+        <p>No clear view of who is realistically available, at what price, and on what timeline &mdash; so expectations are set in a vacuum.</p>
+      </div>
+      <div class="problem-card">
+        <span class="card-icon">&#8987;</span>
+        <p>Months lost talking to the wrong people, then settling under time pressure &mdash; a pattern that repeats itself on the next hire.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">What you receive</p>
+    <h2 class="section-heading">Four things in one concise intelligence pack</h2>
+    <div class="timeline-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      AI-enabled &mdash; results in hours, not days
+    </div>
+    <div class="deliverables">
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128203;</div>
+        <div>
+          <p class="deliverable-title">Role clarity and success profile</p>
+          <p class="deliverable-desc">A sharpened definition of the role, outcomes, and non-negotiables &mdash; grounded in market reality, not internal assumptions. Must-haves separated clearly from nice-to-haves.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128506;</div>
+        <div>
+          <p class="deliverable-title">Market map and talent signal</p>
+          <p class="deliverable-desc">A real view of the talent pool: where credible candidates are sitting today, the companies most likely to yield them, and a clear sense of shortlist shape &mdash; strong, good, and borderline.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128202;</div>
+        <div>
+          <p class="deliverable-title">Compensation and market competitiveness</p>
+          <p class="deliverable-desc">Directional read on base, bonus, and equity expectations for credible candidates in your market and stage. An honest view of where your current thinking is competitive &mdash; and where it may need adjusting.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128737;</div>
+        <div>
+          <p class="deliverable-title">Risk flags and search strategy</p>
+          <p class="deliverable-desc">Where this search is likely to be hard &mdash; niche domain, location, stage fit, notice periods. Recommended options for timing, geography, and process design. Delivered in plain language your board can act on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">How it works</p>
+    <h2 class="section-heading">Three steps, no wasted motion</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-duration">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            20&ndash;30 minutes
+          </div>
+          <p class="step-title">Briefing call</p>
+          <p class="step-desc">We unpack the role, organisational context, and success criteria together. Assumptions get challenged, not accepted &mdash; the right brief is worth more than a fast start.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-duration">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Same afternoon
+          </div>
+          <p class="step-title">Intelligence phase</p>
+          <p class="step-desc">AI-enabled market mapping runs immediately after the briefing call &mdash; combining Claude, Perplexity, and other proprietary tools and databases to surface talent signals, compensation benchmarks, and candidate patterns within hours, not weeks.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-duration">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            20&ndash;30 minutes
+          </div>
+          <p class="step-title">Read-out and recommendations</p>
+          <p class="step-desc">We walk through the MRI findings together &mdash; often the same day. You leave with a clear decision: adjust the brief, proceed to full search, or pause. No ambiguity. No further obligation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Indicative applications</p>
+    <h2 class="section-heading">Contexts where the scan adds most value</h2>
+    <div class="fit-grid">
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>Hiring a Chief of Staff, Chief Revenue Officer, or Head of Growth where precision in the brief determines the outcome</span></div>
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>Investor pressure or board scrutiny requiring a defensible, data-led view of the market</span></div>
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>Entering a new market or sector where your internal talent map is thin or non-existent</span></div>
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>A role that has stalled, dragged, or misfired before &mdash; and you need to understand why</span></div>
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>Internal misalignment on the brief between founder, CEO, and investors</span></div>
+      <div class="fit-item"><span class="fit-check">&#10003;</span><span>Any hire where moving fast on the wrong brief would be more expensive than pausing</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The advisory behind the scan</p>
+    <h2 class="section-heading">Practitioner-led. Intelligence-driven.</h2>
+    <div class="credential-block">
+      <p class="credential-name">Srini Gundelli</p>
+      <p class="credential-title">Founder &amp; Principal Consultant, BalanceX.ai</p>
+      <p class="credential-bio">Over fifteen years spent helping organisations including Microsoft identify and develop executive and technical leaders across UK, EMEA, and the US. BalanceX.ai combines that depth of experience with AI-enabled diagnostics and agentic automation &mdash; so the intelligence you receive is faster, sharper, and more defensible than a traditional search firm can produce.</p>
+      <p class="credential-bio">Qualified assessor: Myers-Briggs (Level I &amp; II), Hogan Assessments, BPS Test User (Occupational Personality &amp; Ability), Korn Ferry Leadership Architect and Voices 360, CIPD NVQ Level 7 in Organisation Design and Development.</p>
+
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p class="cta-eyebrow">Complimentary initial consultation.</p>
+    <h2 class="cta-heading">Start with a 20-minute scoping call.</h2>
+    <p class="cta-sub">You only move into a full search once you&rsquo;ve seen the market for yourself and are confident the brief will land the right person.</p>
+    <a class="cta-btn" href="https://cal.com/BalanceX.ai/20min" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book a scoping call
+    </a>
+    <p class="footer-note">Initial consultation is complimentary. No commercial discussion until you decide to proceed.</p>
+  </div>
+
+</div>
+</body>
+</html>
